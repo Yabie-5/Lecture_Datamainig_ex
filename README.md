@@ -1,2 +1,2 @@
 # Lecture_Datamainig_ex
-Univercity od the ryukyu Datamaining 2022
+Univercity of the ryukyu Datamaining 2022
