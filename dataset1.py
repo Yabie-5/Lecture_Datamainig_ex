@@ -9,6 +9,13 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn import datasets
 
+def read_file():
+    """ Read tvs file for output.tsv
+     """
+    df=pd.read_csv("ex_1/output.tsv", sep='\t')
+
+    return df
+
 def ture_function(x):
     """ Return a ture value
     >>> ture_function(0)
@@ -19,7 +26,11 @@ def ture_function(x):
     return y
 
 def get_plot_dataset(n=20):
+    """ Retern a dataset of observer's point , ture value and observer's value
 
+    >>> type(obs_function())
+    <class 'module'>
+     """
     #観測点から、ture_danctionにより、真値を取り出す。
     X = obs_function(n)
     X_t = np.zeros(len(X))
@@ -77,10 +88,3 @@ def obs_function(n=20):
     np.random.seed(0)
     obs_X = np.random.rand(n)
     return obs_X
-
-if __name__ == "__main__":
-    doctest.testmod()
-    dataset = get_plot_dataset(20)
-    #print(dataset)
-    #plot(dataset)
-    dataset.to_csv('ex_1/output.tsv', sep='\t', index=True, index_label="col0")
