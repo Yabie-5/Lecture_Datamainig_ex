@@ -54,12 +54,17 @@ def plot(df):
     
     x = df["観測点"]
     t = df["真値"]
+    n_t = df["観測値"]
     #ex1.1のplot
     #plt.scatter(magerX, ex1, label=f"ex1_1 functionn n={len(ex1)}", color="red")
     plt.plot(magerX, ex1, label=f"ex1_1 function n={len(ex1)}", color="red")
 
     #ex1.2のplot
     plt.scatter(x, t, label=f"observer's function n={len(t)}")
+
+    #ex3
+    plt.scatter(x, n_t, label=f"ex3 function n={len(t)}")
+
     plt.legend()
     plt.show()
 
@@ -76,6 +81,6 @@ def obs_function(n=20):
 if __name__ == "__main__":
     #doctest.testmod()
     dataset = get_plot_dataset(20)
-    print(dataset)
-    #plot(dataset)
+    #print(dataset)
+    plot(dataset)
     
